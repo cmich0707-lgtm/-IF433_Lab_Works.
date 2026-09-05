@@ -10,3 +10,7 @@ class Student (val name: String, val nim: String, val major) {
         }
     }
 }
+construction (name: string, nim: string) : this(name, nim, major = "Non-Matriculated") {
+    println("LOG: Menggunakan construction jalur umum (Tanpa Jurusan).")
+}
+
