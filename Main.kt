@@ -1,22 +1,27 @@
-package oop_148836_MichaelSitompul.week2
+import java.util.Scanner
 
+fun main() {
+    val scanner = Scanner(System.`in`)
 
+    print("Masukkan judul buku: ")
+    val bookTitle = scanner.nextLine()
 
-print("Pilih Jalur (1. Reguler, 2. Umum): ")
-val type = scanner.nextInt()
-scanner.nextLine()
+    print("Masukkan nama peminjam: ")
+    val borrower = scanner.nextLine()
 
-if (type == 1) {
-    print("Masukkan Jurusan: ")
-    val major = scanner.nextLine()
-    // Memanggil Primary Constructor
-    val s1 = Student(name, nim, major)
-    println("Terdaftar di: ${s1.major} dengan GPA awal ${s1.gpa}")
-} else if (type == 2) {
+    print("Masukkan lama pinjam (hari): ")
+    var loanDuration = scanner.nextInt()
 
-    val s2 = Student(name, nim)
-    println("Terdaftar di: ${s2.major} dengan GPA awal ${s2.gpa}")
-} else {
-    println("Pilihan ngawur, pendaftaran batal!")
+    // Validasi lama pinjam tidak boleh minus
+    if (loanDuration < 0) {
+        loanDuration = 1
+    }
+
+    val loan = Loan(bookTitle, borrower, loanDuration)
+
+    println("\n=== Detail Peminjaman ===")
+    println("Judul Buku    : ${loan.bookTitle}")
+    println("Peminjam      : ${loan.borrower}")
+    println("Lama Pinjam   : ${loan.loanDuration} hari")
+    println("Total Denda   : Rp ${loan.calculateFine()}")
 }
-
