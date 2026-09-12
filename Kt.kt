@@ -1,23 +1,19 @@
-fun main() {
-    // --- Testing Tugas 1: Weapon ---
-    val sword = Weapon("Excalibur", 100)
+class Player(
+    val username: String
+) {
+    private var xp: Int = 0
 
-    // Coba set ke -50 (harus gagal/muncul peringatan)
-    sword.damage = -50
+    val level: Int
+        get() = (xp / 100) + 1
 
-    // Coba set ke 9999 (harus dipaksa jadi 1000)
-    sword.damage = 9999
+    fun addXp(amount: Int) {
+        if (amount <= 0) return
 
-    // Print Tier-nya (karena damage 1000, harus "Legendary")
-    println("Tier Senjata: ${sword.tier}")
+        val previousLevel = level
+        xp += amount
 
-    println("-----------------------------------")
-
-    // --- Testing Tugas 2: Player ---
-    val player = Player("Hero123")
-
-    // player.xp = 100 // Jika di-uncomment, ini akan ERROR (karena private)
-
-    player.addXp(50)  // Masih level 1
-    player.addXp(60)  // Total XP 110, memicu pesann level up ke level 2
+        if (level > previousLevel) {
+            println("Level Up! Selamat $username naik ke level $level!")
+        }
+    }
 }
