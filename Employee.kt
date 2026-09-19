@@ -1,27 +1,12 @@
-package week3
+open class Employee(
+    val name: String,
+    val baseSalary: Int
+) {
+    open fun work() {
+        println("$name sedang bekerja.")
+    }
 
-class Employee(val name: String) {
-    var salary: Int = 0
-        set(value) {
-            if (value < 0) {
-                println("ERROR: gaji tidak boleh negatif! Di-Set ke 0.")
-                field = 0
-            } else {
-                field = value
-            }
-
-        }
-}
- private var performanceRating int = 3
-
-
-fun increasePerformance() {
-    performanceRating ++
-    println("Kinerja $name meiningkat! Rating: $performanceRating")
-
-    fun printStatus() {
-        println("Karyawan: $name, Rating: $performanceRating")
+    open fun calculateBonus(): Int {
+        return (baseSalary * 0.10).toInt()
     }
 }
- val tax: Double
-     get() = salary * 0.1
