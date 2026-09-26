@@ -1,10 +1,26 @@
-fun main() {
-    val manager = Manager("Budi", 10000000)
-    val developer = Developer("Andi", 8000000, "Kotlin")
+package week5
 
-    manager.work()
-    println("Bonus Manager: Rp ${manager.calculateBonus()}")
+fun main () {
+    val dosen1 = Dosen (nama = "Pak Alex", nidn = "0123456")
+    val admin1 = Admin (nama = "Bu siti")
 
-    developer.work()
-    println("Bonus Developer: Rp ${developer.calculateBonus()}")
+    val daftarPegawai: list<Pegawai> = listof(dosen1, admin1)
+
+    println("=== AKTIVITAS PEGAWAI ===")
+    for (Pegawai in daftarPegawai) {
+        pegawai.bekerja()
+
+
+        when (pegawai) {
+            is Dosen -> {
+                println("=> Terdeteksi sebagai Dosen (NION: ${pegawai.nidn})")
+                pegawai.mengajar()
+            }
+            is Admin -> {
+                println("=> Terdeteksi sebagai Admin")
+                pegawai.doAdminWork()
+            }
+        }
+        println("----------------------")
+    }
 }
