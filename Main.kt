@@ -1,26 +1,13 @@
 package week5
 
-fun main () {
-    val dosen1 = Dosen (nama = "Pak Alex", nidn = "0123456")
-    val admin1 = Admin (nama = "Bu siti")
+fun main() {
+    val mathHelper = MathHelper()
 
-    val daftarPegawai: list<Pegawai> = listof(dosen1, admin1)
+    val luasPersegi = mathHelper.hitungLuas(5)
+    val luasPersegiPanjang = mathHelper.hitungLuas(4, 6)
+    val luasLingkaran = mathHelper.hitungLuas(7.0)
 
-    println("=== AKTIVITAS PEGAWAI ===")
-    for (Pegawai in daftarPegawai) {
-        pegawai.bekerja()
-
-
-        when (pegawai) {
-            is Dosen -> {
-                println("=> Terdeteksi sebagai Dosen (NION: ${pegawai.nidn})")
-                pegawai.mengajar()
-            }
-            is Admin -> {
-                println("=> Terdeteksi sebagai Admin")
-                pegawai.doAdminWork()
-            }
-        }
-        println("----------------------")
-    }
+    println("Luas Persegi (sisi 5): $luasPersegi")
+    println("Luas Persegi Panjang (4x6): $luasPersegiPanjang")
+    println("Luas Lingkaran (r 7.0): $luasLingkaran")
 }
