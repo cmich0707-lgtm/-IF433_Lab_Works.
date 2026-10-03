@@ -1,8 +1,7 @@
 #!/usr/bin/env kotlin
 interface clickable {
 
-    val name: String = "Tombol RAhasia"
-
+    val name: String =
     fun click() 
 
 }
