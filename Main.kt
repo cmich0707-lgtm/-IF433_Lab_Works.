@@ -1,3 +1,11 @@
 package week7
 
-val client = NetworkClient ("https://api.umn.ac.id").
+fun main() {
+    println("=== TEST SINGLETON ===")
+    println("Status ${DatabaseManager.connectionStatus}")
+    DatabaseManager.connect()
+
+    println("\n=== Test Companion OBJECT ===")
+    val client = NetworkClient.createClient()
+    client.connect()
+}
