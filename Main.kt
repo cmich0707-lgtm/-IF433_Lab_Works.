@@ -11,3 +11,13 @@ fun main() {
     println("Senjata Dibuat: ${starterWeapon.item.name} | Damage: ${starterWeapon.item.damage} | Durability: ${starterWeapon.durability}")
 
     println("\n----------------------------------\n")
+
+    // 9. Modifikasi Immutability (copy) & Simulasi Event Berurutan
+    val upgradedItem = starterWeapon.item.copy(damage = 25, name = "Pedang Kayu Besi Tajam")
+
+    println("--- Memulai Simulasi Event Pertarungan ---")
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(upgradedItem))
+    processEvent(BattleState.GameOver("Terkena jebakan racun"))
+}
