@@ -4,3 +4,10 @@ fun main() {
     GameManager.startGame()
 
     println("\n----------------------------------\n")
+
+    // 8. Simulasi Rarity dan Factory Senjata
+    println("Drop Chance LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
+    val starterWeapon = Weapon.forgeStarterSword()
+    println("Senjata Dibuat: ${starterWeapon.item.name} | Damage: ${starterWeapon.item.damage} | Durability: ${starterWeapon.durability}")
+
+    println("\n----------------------------------\n")
