@@ -7,3 +7,4 @@ data class TradeLog(
     val roe: Double,
     val status: String
 )
+
