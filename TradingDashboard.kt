@@ -1,0 +1,12 @@
+fun main() {
+    // ==========================================
+    // CHECKPOINT 11: Inisialisasi Data Uji
+    // ==========================================
+    val tradeHistory = listOf(
+        TradeLog("BTCUSDT", "LONG", 20, 15.5, "CLOSED"),
+        TradeLog("ETHUSDT", "SHORT", 10, -5.2, "CLOSED"),
+        TradeLog("BTCUSDT", "SHORT", 50, -12.4, "CLOSED"),
+        TradeLog("SOLUSDT", "LONG", 25, 30.0, "CLOSED"),
+        TradeLog("ETHUSDT", "LONG", 15, 8.1, "OPEN"),
+        TradeLog("BTCUSDT", "LONG", 10, 2.5, "OPEN")
+    )
