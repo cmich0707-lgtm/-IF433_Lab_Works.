@@ -1,7 +1,5 @@
 fun main() {
-    // ==========================================
-    // CHECKPOINT 11: Inisialisasi Data Uji
-    // ==========================================
+
     val tradeHistory = listOf(
         TradeLog("BTCUSDT", "LONG", 20, 15.5, "CLOSED"),
         TradeLog("ETHUSDT", "SHORT", 10, -5.2, "CLOSED"),
@@ -10,3 +8,6 @@ fun main() {
         TradeLog("ETHUSDT", "LONG", 15, 8.1, "OPEN"),
         TradeLog("BTCUSDT", "LONG", 10, 2.5, "OPEN")
     )
+
+   
+    val closedTrades = tradeHistory.filter { it.status == "CLOSED" }
