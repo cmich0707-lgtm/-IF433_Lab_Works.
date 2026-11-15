@@ -1,11 +1,8 @@
 fun main() {
-    println("=== TEST SAFE CALLS & ELVIS ===")
-    val emptyOrder = Order(null, 250000)
+    println("=== TEST GENERIC CLASS ===")
+    val intBox = Box(100)
+    val stringBox = Box("Generics in Kotlin")
 
-    val receipt = validOrder.totalPrice?.let { price ->
-        val tax = price * 0.11
-        "Transaksi Valid. Harga: Rp$price, Pajak: Rp$tax"
-    } ?: "Transaksi Invalid: Harga belum di-set!"
-
-    println(receipt)
+    println("Isi intBox: ${intBox.value}")
+    println("Isi stringBox: ${stringBox.value}")
 }
