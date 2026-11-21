@@ -13,3 +13,14 @@ fun main() {
     }.also { device ->
         homeDevices.add(device)
     }
+
+    // 5. Konfigurasi Keamanan (apply & also)
+    SmartDevice("Ezviz Outdoor", "Camera")
+        .apply {
+            isOnline = true
+            powerLoad = 5
+        }
+        .also { device ->
+            println("(LOG) Kamera terhubung")
+            homeDevices.add(device)
+        }
