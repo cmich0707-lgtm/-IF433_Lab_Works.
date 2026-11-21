@@ -24,7 +24,7 @@ fun main() {
             println("(LOG) Kamera terhubung")
             homeDevices.add(device)
         }
-
+    // 6. Konfigurasi AC & Kabel (run) + Alat Pakan Peliharaan
     val acDevice = run {
         SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800)
     }
@@ -33,3 +33,10 @@ fun main() {
     homeDevices.add(
         SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10)
     )
+
+    // 7. Pencarian Aman dengan let
+    val searchResult = homeDevices.find { it.category == "Camera" }
+    searchResult?.let {
+        println(it.diagnose())
+    }
+// -> CHECKPOINT 17: git commit -m "week11: (task) implement device search with let"
