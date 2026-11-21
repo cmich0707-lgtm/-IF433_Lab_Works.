@@ -39,4 +39,8 @@ fun main() {
     searchResult?.let {
         println(it.diagnose())
     }
-// -> CHECKPOINT 17: git commit -m "week11: (task) implement device search with let"
+    // 8. Menggunakan with untuk Format Summary
+    with(homeDevices) {
+        println("=== RINGKASAN SMART HOME DASHBOARD ===")
+        println("Total perangkat terdaftar: ${this.size}")
+    }
